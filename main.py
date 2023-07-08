@@ -1,24 +1,38 @@
 import argparse
 from utils.image_processing import process_image
 from utils.ocr_engine import extract_text
+import os
 
 def main():
     # Create argument parser
     parser = argparse.ArgumentParser(description="Extract text from an image")
 
     # Add arguments
-    parser.add_argument("filepath", help="Path to the image file")
+    parser.add_argument("filepaths", nargs='+', help="Path to the image file")
 
     # Parse arguments
     args = parser.parse_args()
 
-    # Process the image
-    processed_image = process_image(args.filepath)
-    
-    # Use pytesseract to extract text
-    text = extract_text(processed_image)
+    # Loop over each file path
+    for filepath in args.filepaths:
 
-    print("Extracted Text: \n", text)
+        # Validate the file path
+        if not os.path.isfile(filepath):
+            print(f"The file {filepath} does not exist.")
+            continue
+
+        # Process the image
+        processed_image = process_image(filepath)
+
+        # Create an output file path
+        base_name = os.path.basename(filepath)
+        file_name, _ = os.path.splitext(base_name)
+        output_file = f"{file_name}.txt"
+
+        # Use pytesseract to extract text and write it to a file
+        extract_text(processed_image, output_file)
+
+        print(f"Extracted text written to {output_file}")
 
 if __name__ == "__main__":
     main()
