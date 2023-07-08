@@ -36,3 +36,10 @@ The extracted text will be printed on the console.
 
 
 > Remember, Tesseract does a good job when the image is of high quality and the text is horizontal. For complex cases involving rotations, skewness, different languages or noisy backgrounds, you might have to use additional image processing techniques or different OCR tools.
+
+
+## Additional Info
+
+For more information on how to use this tool and how it works, see the following documentation:
+
+* [Code Explanation](code-explanation.md)
