@@ -31,10 +31,14 @@ pip install tesserocr
 To run the script, simply execute the following from a terminal:
 
 ```bash
-python main.py
+python main.py path_to_image1 path_to_image2
 ```
 
+This will print the text to the console by default, but if you add the `--to-file` flag, it will print the text to separate files in the a directly called `output`.
 
+```bash
+python main.py path_to_image1 path_to_image2 --to-file
+```
 
 
 The script expects a file named input.png in the same directory. You can replace it with your image file. Please replace 'input.png' with the path to your image in `main.py`.
