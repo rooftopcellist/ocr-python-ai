@@ -6,6 +6,13 @@ This project uses Optical Character Recognition (OCR) to extract text from image
 
 1. Install Tesseract on your machine. For instructions, see: https://github.com/tesseract-ocr/tessdoc#installation
 
+For Fedora, I needed to follow this guide: https://blog.mdda.net/oss/2016/08/10/tesseract-and-python-on-fedora and run the following:
+
+```bash
+sudo dnf install tesseract-devel
+pip install tesserocr
+```
+
 2. Create a virtual environment (optional, but recommended):
 
     ```bash
@@ -34,6 +41,7 @@ The script expects a file named input.png in the same directory. You can replace
 
 The extracted text will be printed on the console.
 
+This tool accepts multiple image formats since OpenCV's cv2.imread() function supports a variety of image formats including .bmp, .jpg, .jpeg, .png, .tif, .tiff, etc.
 
 > Remember, Tesseract does a good job when the image is of high quality and the text is horizontal. For complex cases involving rotations, skewness, different languages or noisy backgrounds, you might have to use additional image processing techniques or different OCR tools.
 

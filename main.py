@@ -7,7 +7,7 @@ def main():
     parser = argparse.ArgumentParser(description="Extract text from an image")
 
     # Add arguments
-    parser.add_argument("filepath", help="Path to the image file", required=True)
+    parser.add_argument("filepath", help="Path to the image file")
 
     # Parse arguments
     args = parser.parse_args()

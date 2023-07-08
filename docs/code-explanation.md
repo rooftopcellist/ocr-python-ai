@@ -14,7 +14,7 @@ In the `main` function, first, it creates an `argparse.ArgumentParser` object an
 
 ```python
 parser = argparse.ArgumentParser(description="Extract text from an image")
-parser.add_argument("filepath", help="Path to the image file", required=True)
+parser.add_argument("filepath", help="Path to the image file")
 ```
 
 The `parse_args` function will return some output that looks like `Namespace(filepath='path_to_your_image')`. The 'filepath' property is then passed to the `process_image` and `extract_text` functions, which are imported from `image_processing.py` and `ocr_engine.py` respectively.
