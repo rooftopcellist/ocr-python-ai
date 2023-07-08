@@ -2,6 +2,7 @@ import argparse
 from utils.image_processing import process_image
 from utils.ocr_engine import extract_text
 import os
+import imghdr
 
 def main():
     # Create argument parser
@@ -19,6 +20,12 @@ def main():
         # Validate the file path
         if not os.path.isfile(filepath):
             print(f"The file {filepath} does not exist.")
+            continue
+
+        # Check if the file is an image
+        image_type = imghdr.what(filepath)
+        if not image_type:
+            print(f"The file {filepath} is not a valid image.")
             continue
 
         # Process the image
