@@ -39,10 +39,10 @@ def main():
         if image_type:
             print(f"The image type is: {image_type}")
 
-        # Print error if image format is not valid
-        if not image_type:
-            print(f"The file {filepath} is not a valid image.")
-            continue
+        # # Print error if image format is not valid
+        # if not image_type:
+        #     print(f"The file {filepath} is not a valid image.")
+        #     continue
 
         # Process the image
         processed_image = process_image(filepath)

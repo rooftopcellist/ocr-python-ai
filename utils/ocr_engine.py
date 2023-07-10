@@ -1,9 +1,6 @@
 import pytesseract
 from PIL import Image
 
-import pytesseract
-from PIL import Image
-
 def extract_text(image, output_file=None):
     # Convert the image to PIL Image object
     image = Image.fromarray(image)
